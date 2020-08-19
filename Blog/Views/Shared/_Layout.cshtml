@@ -36,6 +36,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/Contact/">Contact</a>
                     </li>
+                    @if (Session["UserId"] != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/Index/@Session["UserId"]">@Session["UserName"].ToString()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/Logout/">Logout</a>
+                        </li>
+                        if (Convert.ToInt32(Session["AuthId"]) == 1)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Admin/Index/">Admin</a>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/User/Login/">Login</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>

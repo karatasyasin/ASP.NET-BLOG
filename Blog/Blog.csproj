@@ -121,6 +121,7 @@
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +154,10 @@
     <Content Include="Views\AdminCategory\Details.cshtml" />
     <Content Include="Views\AdminCategory\Edit.cshtml" />
     <Content Include="Views\AdminCategory\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -163,6 +168,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\ArticlePhoto\" />
+    <Folder Include="Uploads\UserPhoto\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    if (Session["AuthId"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    if (Convert.ToInt32(Session["AuthId"]) != 1)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -107,7 +118,7 @@
             </nav>
         </div>
         <div id="layoutSidenav_content">
-            <main>
+            <main class="col-md-8">
                 @RenderBody()
             </main>
             <footer class="py-4 bg-light mt-auto">
