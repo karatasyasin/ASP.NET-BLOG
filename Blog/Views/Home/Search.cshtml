@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Blog.Models.Article>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-8">
+    <h2>Search</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Displayed)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                    <a href="/Home/ArticleDetail/@item.ArticleId">@item.Title</a>
+                </td>
+                <td>
+                    <img class="img-fluid rounded" width="50" src="@item.Photo" alt="@item.Title" />
+                </td>
+                <td>
+                    @String.Format("{0: MMMM yyyy}", item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Displayed)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

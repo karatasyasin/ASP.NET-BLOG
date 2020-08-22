@@ -12,6 +12,7 @@ namespace Blog.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+            Articles = new HashSet<Article>();
             Comments = new HashSet<Comment>();
         }
 
@@ -33,6 +34,9 @@ namespace Blog.Models
         public string Photo { get; set; }
 
         public int? AuthId { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Article> Articles { get; set; }
 
         public virtual Auth Auth { get; set; }
 

@@ -26,7 +26,6 @@ namespace Blog.Models
         [StringLength(100)]
         public string Photo { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? Date { get; set; }
 
         public int? Displayed { get; set; }
@@ -36,6 +35,8 @@ namespace Blog.Models
         public int? UserId { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }

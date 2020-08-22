@@ -61,7 +61,7 @@ namespace Blog.Controllers
                         article.Tags.Add(newTag);
                     }
                 }
-
+                article.UserId = Convert.ToInt32(Session["UserId"]);
                 blogDB.Articles.Add(article);
                 blogDB.SaveChanges();
 

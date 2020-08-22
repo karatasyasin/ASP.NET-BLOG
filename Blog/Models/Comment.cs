@@ -11,11 +11,9 @@ namespace Blog.Models
     {
         public int CommentId { get; set; }
 
-        [StringLength(500)]
         public string Content { get; set; }
 
-        [StringLength(10)]
-        public string Date { get; set; }
+        public DateTime? Date { get; set; }
 
         public int? UserId { get; set; }
 

@@ -1,0 +1,12 @@
+﻿<h5 class="card-header">Search</h5>
+@using (Html.BeginForm("Search", "Home", FormMethod.Post, new { enctype="multipart/form-data" }))
+{
+    <div class="card-body">
+        <div class="input-group">
+            <input id="Search" name="Search" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-append">
+                <button value="Search" class="btn btn-secondary" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+}

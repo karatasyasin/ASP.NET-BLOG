@@ -25,10 +25,6 @@ namespace Blog.Models
                 .HasMany(e => e.Tags)
                 .WithMany(e => e.Articles)
                 .Map(m => m.ToTable("ArticleTag").MapLeftKey("ArticleId").MapRightKey("TagId"));
-
-            modelBuilder.Entity<Comment>()
-                .Property(e => e.Date)
-                .IsFixedLength();
         }
     }
 }
